@@ -19,10 +19,10 @@ function mapport (port){
                 console.log('Trying to map port port:'+port)
 
             //gateway, local port, remote port, time to keep open in minutes ,label(used by some routers),function()
-            pmp.portMap(gateway,port,port,1,'pmpcommandline',function(err,rslt){
+            pmp.portMap(gateway,port,port,120,'pmpcommandline',function(err,rslt){
 
                 if (err) {
-                    console.log('error opening port '+settings.options.webserver.listenport, err);
+                    console.log('error opening port '+port, err);
                 }
                 else {
 
